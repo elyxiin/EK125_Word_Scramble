@@ -94,8 +94,8 @@ def selectWord(wordBank):
     scrambled = scramble(word)
     return word, scrambled
 
-print(scramble("bu"))
-"""
+
+# This is just for a feel about how the functions I added are called. This will be deleted later.
 print("\nTesting")
 
 category = selectCategory()
@@ -108,4 +108,3 @@ print(f"\nFull word bank: {categories[category]}")
 print(f"\nRefined word bank: {wordBank}")
 print(f"\nSelected word: {word}")
 print(f"Scrambled word: {scrambled}")
-"""
