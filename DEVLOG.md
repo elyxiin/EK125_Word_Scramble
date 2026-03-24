@@ -91,6 +91,23 @@
 > scrambles the word passed through the function
 * added selectWord() function
 > the function selects a word and runs that word through the scrambler
+* left a temporary testing portion in the code as reference
+> As I wrapped up most of my part thus far, I left a showcase portion at the bottom of the main file. As the next modules build off of the work I completed, it serves as a reference to the utilization of my functions. Later, as the project progresses, this snippet will be removed.
+
+```
+print("\nTesting")
+
+category = selectCategory()
+difficulty, wordBank = selectDifficulty(category)
+word, scrambled = selectWord(wordBank)
+
+print(f"Category: {category}")
+print(f"Difficulty: {difficulty}")
+print(f"\nFull word bank: {categories[category]}")
+print(f"\nRefined word bank: {wordBank}")
+print(f"\nSelected word: {word}")
+print(f"Scrambled word: {scrambled}")
+```
 
 ## Riya
 
