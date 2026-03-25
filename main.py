@@ -111,29 +111,29 @@ while(True):
     score = 0
     maxAttempts = 3
     count = 0
-    print(scrambled)
+
+    print(f"The scrambled word is {scrambled}")
     while count < maxAttempts:
         userInput = input("Choose a word: ").lower()
 
         for character in userInput:
-            print("Test1")
 
             if character not in letters:
                 print("Invalid statement")
                 count += 1
-                print("Test2")
 
             if userInput.lower() == word.lower():
                 print(f"You got the word it was {word}!")
                 break
-                print("Test3")
             
             else:
                 print("That is the wrong word! Try again!")
                 count += 1
-                print("Test4")
 
     score = difficultyLevels[difficulty] * (maxAttempts - count)
     print(f"Your score is {score}! You took {count} attempts!")
 
-    input("Press any key to play again. ")
+    print(word[-1])
+
+    input("Press enter to play again. ")
+
