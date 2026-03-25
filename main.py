@@ -1,6 +1,7 @@
 # imports
 import csv
 import random
+import game_logic 
 
 # reading data from 'word_bank'
 with open('word_bank.csv', mode='r', newline='') as file:
@@ -95,45 +96,18 @@ def selectWord(wordBank):
     return word, scrambled
 
 
+# This is just for a feel about how the functions I added are called. This will be deleted later.
+print("\nTesting")
 
-print("Welcome to Guess the Scrambled Word!")
-isOn = True
+category = selectCategory()
+difficulty, wordBank = selectDifficulty(category)
+word, scrambled = selectWord(wordBank)
 
-while(True):
-    category = selectCategory()
-    difficulty, wordBank = selectDifficulty(category)
-    word, scrambled = selectWord(wordBank)
+print(f"Category: {category}")
+print(f"Difficulty: {difficulty}")
+print(f"\nFull word bank: {categories[category]}")
+print(f"\nRefined word bank: {wordBank}")
+print(f"\nSelected word: {word}")
+print(f"Scrambled word: {scrambled}")
 
-    difficultyLevels = {'easy': 5, 'medium': 10, 'hard': 15}
-
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
-
-    score = 0
-    maxAttempts = 3
-    count = 0
-    print(scrambled)
-    while count < maxAttempts:
-        userInput = input("Choose a word: ").lower()
-
-        for character in userInput:
-            print("Test1")
-
-            if character not in letters:
-                print("Invalid statement")
-                count += 1
-                print("Test2")
-
-            if userInput.lower() == word.lower():
-                print(f"You got the word it was {word}!")
-                break
-                print("Test3")
-            
-            else:
-                print("That is the wrong word! Try again!")
-                count += 1
-                print("Test4")
-
-    score = difficultyLevels[difficulty] * (maxAttempts - count)
-    print(f"Your score is {score}! You took {count} attempts!")
-
-    input("Press any key to play again. ")
+score = game_logic.playGame(scramble, word, difficulty)
