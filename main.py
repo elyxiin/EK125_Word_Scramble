@@ -111,3 +111,6 @@ print(f"\nSelected word: {word}")
 print(f"Scrambled word: {scrambled}")
 
 score = game_logic.playGame(scramble, word, difficulty)
+
+print(word[-1])
+input("Press enter to play again. ")
