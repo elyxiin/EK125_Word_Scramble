@@ -108,3 +108,31 @@ print(f"\nFull word bank: {categories[category]}")
 print(f"\nRefined word bank: {wordBank}")
 print(f"\nSelected word: {word}")
 print(f"Scrambled word: {scrambled}")
+
+difficultyLevels = {'easy': 5, 'medium': 10, 'hard': 15}
+
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+
+score = 0
+maxAttempts = 3
+count = 0
+
+while count < maxAttempts:
+	userInput = input("Choose a word: ").lower()
+
+	for character in userInput:
+
+		if character not in letters:
+			print("Invalid statement")
+			count += 1
+
+		if userInput.lower() == word.lower():
+			print(f"You got the word it was {word}!")
+			break
+
+		else:
+			print("That is the wrong word! Try again!")
+			count += 1
+
+score = difficultyLevels[difficulty] * (maxAttempts - count)
+print(f"Your score is {score}! You took {count} attempts!")
