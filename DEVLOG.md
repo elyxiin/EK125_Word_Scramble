@@ -42,8 +42,17 @@
             technology.append(row['technology'])
 ```
 
-> Made the code more concise and clean by utilizing for loops.
-```    for row in reader:
+> Made the code more concise and clean by utilizing for loops. Categories are now kept in a dictionary.
+```
+    categories = {
+        'animal' : [],
+        'food' : [],
+        'country' : [],
+        'science' : [],
+        'technology' : [] 
+        }
+
+    for row in reader:
         for key in categories:
             if row[key]: # since some categories have more values than others, checks to see if it is empty
                 categories[key].append(row[key])
