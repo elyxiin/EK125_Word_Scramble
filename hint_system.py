@@ -1,7 +1,12 @@
 
 maxAttempts = 3
-    count = 1
-    hasAnswer = False
+count = 1
+hasAnswer = False
+
+def show_word_length(word):
+    """reveal the length of the word"""
+    length = len(word)
+    print("The word has", length, "letters.")
 
 def selectHint():
     hint = 0
@@ -23,17 +28,16 @@ def selectHint():
 
 
 score = 1000
-#def show_word_length(word):
-   # """reveal the length of the word"""
-    #length = len(word)
-    #print("The word has", length, "letters.")
 
 
-hint = selectHint()
-print("Hint chosen:", hint)
-if hint == "First Letter":
-    score = score-2
-    print("First letter:", word[0])
-elif hint == "Last Letter":
-    score = score-2
-    print("Last letter:", word[-1])
+while hasAnswer == False:
+    hint = selectHint()
+    print("Hint chosen:", hint)
+    if hint == "First Letter":
+        score = score-2
+        print("First letter:", word[0])
+    elif hint == "Last Letter":
+        score = score-2
+        print("Last letter:", word[-1])
+    elif hint == "None":
+
