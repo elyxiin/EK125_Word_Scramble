@@ -111,4 +111,4 @@ print(f"Scrambled word: {scrambled}")
 
 ## Riya
 
-## Keira
+## Kiera
