@@ -108,3 +108,4 @@ print(f"\nFull word bank: {categories[category]}")
 print(f"\nRefined word bank: {wordBank}")
 print(f"\nSelected word: {word}")
 print(f"Scrambled word: {scrambled}")
+
