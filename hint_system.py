@@ -1,13 +1,5 @@
-
 import time
-
-maxHints = 2
-hintsUsed = 0
-score = 0
-maxAttempts = 3
-count = 1
-hasAnswer = False
-total_time = 0
+import game_logic
 
 def show_word_length(word):
     """reveal the length of the word"""
@@ -31,30 +23,20 @@ def selectHint():
         return selectHint()
     return hint
 
-show_word_length(word)
-score = 0
+def useHint(hintsUsed, hint, word, score):
+    maxHints = 2
+    if hintsUsed < maxHints:
+        print("Hint chosen:", hint)
+        if hint == "First Letter":
+            score = score - 2
+            hintsUsed += 1
+            print(f"First letter: {word[0]}, score decreased by 2 points")
+        elif hint == "Last Letter":
+            score = score - 2
+            hintsUsed += 1
+            print(f"Last letter: {word[-1]}, score decreased by 2 points")
+    else:
+        print("Hints are already used up.")
 
-while count <= maxAttempts and not hasAnswer:
-    # Record time before guess
-    start_time = time.time()
-    userInput = input(f"Attempt {count}: Choose a word: ").lower()
-    # Record time after guess
-    end_time = time.time()
-
-    # Accumulate the time spent on this specific guess
-    total_time += (end_time - start_time)
-
-while hintsUsed < maxHints:
-    hint = selectHint()
-    print("Hint chosen:", hint)
-    if hint == "First Letter":
-        score = score-2
-        hintsUsed += 1
-        print("First letter:", word[0])
-    elif hint == "Last Letter":
-        score = score-2
-        hintsUsed += 1
-        print("Last letter:", word[-1])
-    elif hint == "None":
-        userInput = input("Choose a word: ").lower()
+    return score, hintsUsed
 
