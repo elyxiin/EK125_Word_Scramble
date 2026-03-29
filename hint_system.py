@@ -1,8 +1,6 @@
 
-maxAttempts = 3
-count = 1
-hasAnswer = False
-
+maxHints = 2
+hintsUsed = 0
 def show_word_length(word):
     """reveal the length of the word"""
     length = len(word)
@@ -14,30 +12,31 @@ def selectHint():
         1. First Letter\n\
         2. Last Letter\n\
         3. None (Guess the word)\n")
-
-    if hint_select=='' or hint_select =='1':
+    if hint_select=='first' or hint_select =='1':
         hint = 'First Letter'
-    elif hint_select =='' or hint_select =='2':
-        hint = ('Last Letter')
-    elif hint_select == 'None' or hint_select =='3':
+    elif hint_select =='last' or hint_select =='2':
+        hint = 'Last Letter'
+    elif hint_select == 'none' or hint_select =='3':
         hint = 'None'
     else:
         print(f"{hint_select} is not a valid Hint.")
-        selectHint()
+        return selectHint()
     return hint
 
+show_word_length(word)
+score = 0
 
-score = 1000
-
-
-while hasAnswer == False:
+while hintsUsed < maxHints:
     hint = selectHint()
     print("Hint chosen:", hint)
     if hint == "First Letter":
         score = score-2
+        hintsUsed += 1
         print("First letter:", word[0])
     elif hint == "Last Letter":
         score = score-2
+        hintsUsed += 1
         print("Last letter:", word[-1])
     elif hint == "None":
+        userInput = input("Choose a word: ").lower()
 
