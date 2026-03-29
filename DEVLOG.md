@@ -118,6 +118,19 @@ print(f"\nSelected word: {word}")
 print(f"Scrambled word: {scrambled}")
 ```
 
+**03.25.2026**
+* Removed testing statements
+* Added a welcoming statement into the game as well as a game loop to allow continuous replays
+```
+print("Welcome to Guess the Scrambled Word!")
+isOn = True
+
+while(True):
+```
+
+**03.26.2026**
+* Moved all my functions into a separate file scramble.py to reduce clutter in main
+
 ## Riya
 
 ## Kiera

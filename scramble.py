@@ -1,21 +1,27 @@
-# imports
-import game_logic 
-import scramble
+import csv
+import random
+# reading data from 'word_bank'
+with open('word_bank.csv', mode='r', newline='') as file:
+    reader = csv.DictReader(file)
 
-print("Welcome to Guess the Scrambled Word!")
-isOn = True
+    # categories
+    categories = {
+        'animal' : [],
+        'food' : [],
+        'country' : [],
+        'science' : [],
+        'technology' : [] 
+        }
 
-while(True):
-    category = scramble.selectCategory()
-    difficulty, wordBank = scramble.selectDifficulty(category)
-    word, scrambled = scramble.selectWord(wordBank)
-    print(f"The scrambled word is {scrambled}")
+    for row in reader:
+        for key in categories:
+            if row[key]: # since some categories have more values than others, checks to see if it is empty
+                categories[key].append(row[key])
 
-    score = game_logic.playGame(scramble, word, difficulty)
+def selectCategory():
+    """Allows user to select category either by typing in the category or corresponding number"""
+    category = 0
 
-    input("Press enter to play again. ")
-
-<<<<<<< HEAD
     # category menu
     user = input("Please select a category\n\
                  1. Animals \n\
@@ -87,20 +93,4 @@ def selectWord(wordBank):
     return word, scrambled
 
 
-# This is just for a feel about how the functions I added are called. This will be deleted later.
-print("\nTesting")
 
-category = selectCategory()
-difficulty, wordBank = selectDifficulty(category)
-word, scrambled = selectWord(wordBank)
-
-print(f"Category: {category}")
-print(f"Difficulty: {difficulty}")
-print(f"\nFull word bank: {categories[category]}")
-print(f"\nRefined word bank: {wordBank}")
-print(f"\nSelected word: {word}")
-print(f"Scrambled word: {scrambled}")
-
-=======
-m
->>>>>>> 8c84a557b6f280f673bf8de8e5ca2337a2cde1a6
