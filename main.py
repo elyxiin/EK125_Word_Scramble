@@ -11,6 +11,6 @@ while(True):
     word, scrambled = scramble.selectWord(wordBank)
     print(f"The scrambled word is {scrambled}")
 
-    score = game_logic.playGame(scrambled, word, difficulty)
+    score = game_logic.playGame(word, difficulty)
 
     input("Press enter to play again. \n")

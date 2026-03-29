@@ -1,12 +1,14 @@
 import time
 import game_logic
 
+# Kiera
 def show_word_length(word):
     """reveal the length of the word"""
     length = len(word)
     print("The word has", length, "letters.")
 
 def selectHint():
+    """Pop up menu for hints user can select from, then input which one they choose"""
     hint = 0
     hint_select = input("Please select a hint\n\
         1. First Letter\n\
@@ -20,10 +22,11 @@ def selectHint():
         hint = 'None'
     else:
         print(f"{hint_select} is not a valid Hint.")
-        return selectHint()
+        hint = selectHint()
     return hint
 
 def useHint(hintsUsed, hint, word, score):
+    """Uses the selected hint to print the hint and then take away from the score."""
     maxHints = 2
     if hintsUsed < maxHints:
         print("Hint chosen:", hint)

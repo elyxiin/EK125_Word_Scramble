@@ -1,5 +1,7 @@
+# Xin
 import csv
 import random
+
 # reading data from 'word_bank'
 with open('word_bank.csv', mode='r', newline='') as file:
     reader = csv.DictReader(file)
@@ -42,7 +44,7 @@ def selectCategory():
         category = 'technology'
     else:
         print(f"{user} is not a valid category.")
-        selectCategory()
+        category = selectCategory()
     return category
     
 def selectDifficulty(category):
@@ -65,7 +67,7 @@ def selectDifficulty(category):
         wordBank = [word for word in categories[category] if 8<len(word)]
     else:
         print(f"\n{user} is not a valid difficulty.")
-        selectDifficulty(category)
+        difficulty, wordBank = selectDifficulty(category)
     
     return difficulty, wordBank
 

@@ -1,7 +1,9 @@
+# Riya
 import time
 import hint_system
 
-def playGame(scramble, word, difficulty):
+def playGame(word, difficulty):
+    """Function to play game"""
     difficultyLevels = {'easy': 5, 'medium': 10, 'hard': 15}
 
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
@@ -16,13 +18,14 @@ def playGame(scramble, word, difficulty):
     while count <= maxAttempts and hasAnswer == False:
         start_time = time.time()
         userInput = input("Guess the word: ").lower()
-        print(f"Attempts remaining: {3-count}.")
+        print(f"\nAttempts remaining: {3-count}.")
         
         hasDigit = False
         for character in userInput:
             if character not in letters:
                 hasDigit = True
 
+        # hint by Kiera
         if userInput=="hint":
             hint = hint_system.selectHint()
             newScore, newHints = hint_system.useHint(hintsUsed, hint, word, score)
@@ -42,6 +45,8 @@ def playGame(scramble, word, difficulty):
             count += 1
 
     score = score + difficultyLevels[difficulty] * (maxAttempts - count)
+
+    # time by Kiera
     end_time = time.time()
     total_time += (end_time - start_time)
     if hasAnswer:
