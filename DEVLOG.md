@@ -155,6 +155,7 @@ I had too many loops within loops so my code was working semi well however the s
 
 
 CODE BEFORE (if you fixed something):
+```
 import random
 
 #Key = list.random()
@@ -182,6 +183,7 @@ while count < maxAttempts:
         else:
             Print("That is the wrong word! Try again!")
             count += 1
+```
 
 WHAT'S NEXT: I went in office hour to help to me
 
@@ -192,7 +194,7 @@ After the lab from 3:03 to 4:34 I refined all my loops to the best of my ability
 
 CHALLENGE I HIT:
 I tried on my own to figure out how to properly loop the code and to do it without breaking the code as well. 
-
+```
 import random
 
 difficultyLevels = {‘easy’: 5, ‘medium’: 10, ‘hard’: 15}
@@ -228,7 +230,7 @@ print(f"Your score is {score}! You took {count} attempts!")
 #If random == key:
 	#While < 3:
 	#User_input = input(“Choose another word: “)
-
+```
 Syntax Error: 
 SyntaxError: invalid syntax
 
@@ -237,7 +239,9 @@ WHAT'S NEXT: I tried to fix it with I went in office hour to help to me
 SESSION #: _3__
 WHAT I WORKED ON TODAY/ What I learned: 
 During the lab I asked for help on how to redo my loops because my code was in a vicious cycle and the professor helped and I finished all my code in the lab on Wednesday. I stayed a little long then the lab usually gets out to ensure I get it checked by the professor and I finished all my code. I learned instead of putting all my loops into one big loop, to split them up into because in my original code I had a for loop and all my if statements inside it and I only needed one. I also made a function named playGame and put it in its own file then assigned that to a variable in the main file where it is called. 
+
 Code After: 
+```
 def playGame(word, difficulty):
     """Function to play game"""
     difficultyLevels = {'easy': 5, 'medium': 10, 'hard': 15}
@@ -277,7 +281,7 @@ def playGame(word, difficulty):
 
 
     return score
-
+```
 
 ## Kiera
 Student Name: Kiera Rampersad
