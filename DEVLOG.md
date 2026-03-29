@@ -142,11 +142,149 @@ Time so far: 1 hour and 55 minutes
 
 
 ## Riya
+Student Name: Riya Fadia
+Game Title: Word Scramble
+My Module: B
+
+SESSION #: _1__
+WHAT I WORKED ON TODAY:
+For 1 hour during the lab I focused on fabricating a dictionary with the difficulty level and the loops I needed. For example I put a while statement (while count which is assigned to one is greater than maxAttempts and maxAttempts is three because we don't want the user to take more than three attempts) then side I asked for the users input and assigned it to .lower then inside of that for statement (so it can ensure that there is just letters and not number, I made a list of letter all lower and a space because that counts) and within that I made if and if statements (about in the user gets the word then get out of the loop and print “You got it” and the score they got and the attempts they took). In addition, I assigned the variables count, score, and maxAttempts before the loops. I also printed the score and attempts it took at the end. 
+
+CHALLENGE I HIT:
+I had too many loops within loops so my code was working semi well however the stats would never print outside the loop because it was in a vicious cycle, so when you got the correct word it would also print Guess a word it would not tell the attempts it took nor the score that one acquired. 
+
+
+CODE BEFORE (if you fixed something):
+import random
+
+#Key = list.random()
+
+difficultyLevels = {'easy': 5, 'medium': 10, 'hard': 15}
+
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+
+score = 0
+maxAttempts = 3
+count = 0
+while count < maxAttempts:
+    userInput = input("Choose a word: ").lower()
+
+    for character in userInput:
+        if character not in letters:
+            print("Invalid statement")
+            count += 1
+
+        if userInput.lower() == key.lower():
+            print("You Got It!")
+
+            score = difficulty_level[difficulty] * (maxAttempts - count)
+            print(f"Your score is {score}")
+        else:
+            Print("That is the wrong word! Try again!")
+            count += 1
+
+WHAT'S NEXT: I went in office hour to help to me
+
+
+SESSION #: _2__
+WHAT I WORKED ON TODAY: 
+After the lab from 3:03 to 4:34 I refined all my loops to the best of my ability because my code was functioning correctly however it would not stop. It was a constant loop that I could not get out of. I tried putting while hasAnswer == False and then if the user got the word the variable (defined outside the loop) would be assigned to False. However that would not work because there were too many loops inside a loop. So I deleted it and decided to ask for help in the lab where it turned out I needed to define a variable before the loops start to False then put the while statement (while hasAnswer == False) then if the user gets the word assign hasAnswer to True to get out of the loop to then print the score with the corresponding difficulty and the attempts it took them. 
+
+CHALLENGE I HIT:
+I tried on my own to figure out how to properly loop the code and to do it without breaking the code as well. 
+
+import random
+
+difficultyLevels = {‘easy’: 5, ‘medium’: 10, ‘hard’: 15}
+
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ‘ ‘]
+
+score = 0
+maxAttempts = 3
+count = 0
+hasAnswer = False
+
+while count <= maxAttempts and hasAnswer == False:
+userInput = input(“Choose a word: “).lower()
+
+for character in userInput and hasAnswer == False:
+	if character not in letter:
+		print("Invalid statement")
+		count += 1
+
+    if userInput.lower() == key.lower(): 
+			print(“You Got It!”)
+	        score = difficulty_level[difficulty] * (maxAttempts - count)
+            hasAnswer == True
+            
+		else:
+			print(“That is the wrong word! Try again!”)
+			count +=1
+
+print(f"Your score is {score}! You took {count} attempts!")
+# difficulty is defined in the first code (my partner made)
+
+#If user_input == 
+#If random == key:
+	#While < 3:
+	#User_input = input(“Choose another word: “)
+
+Syntax Error: 
+SyntaxError: invalid syntax
+
+WHAT'S NEXT: I tried to fix it with I went in office hour to help to me
+
+SESSION #: _3__
+WHAT I WORKED ON TODAY/ What I learned: 
+During the lab I asked for help on how to redo my loops because my code was in a vicious cycle and the professor helped and I finished all my code in the lab on Wednesday. I stayed a little long then the lab usually gets out to ensure I get it checked by the professor and I finished all my code. I learned instead of putting all my loops into one big loop, to split them up into because in my original code I had a for loop and all my if statements inside it and I only needed one. I also made a function named playGame and put it in its own file then assigned that to a variable in the main file where it is called. 
+Code After: 
+def playGame(word, difficulty):
+    """Function to play game"""
+    difficultyLevels = {'easy': 5, 'medium': 10, 'hard': 15}
+
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+
+    score = 0
+    maxAttempts = 3
+    count = 1
+    hasAnswer = False
+    
+    while count <= maxAttempts and hasAnswer == False:
+        userInput = input("Guess the word: ").lower()
+
+        hasDigit = False
+        for character in userInput:
+            if character not in letters:
+                hasDigit = True
+                      elif hasDigit:
+            count += 1
+            print("Invalid statement")
+
+        elif userInput.lower() == word.lower():
+            print(f"You got the word it was {word}!")
+            hasAnswer = True
+                
+        else:
+            print("That is the wrong word! Try again!")
+            count += 1
+
+    score = score + difficultyLevels[difficulty] * (maxAttempts - count)
+
+    if hasAnswer:
+        print(f"Your score is {score}! You took {count} attempts and {total_time:.2f} seconds!")
+    else:
+        print(f"You failed to guess the answer in 3 attempts. Your score is {score}. The correct answer is {word}.")
+
+
+    return score
+
 
 ## Kiera
 Student Name: Kiera Rampersad
 Game Title: Word Scramble
 My Module: C
+
+WHAT I WORKED ON TODAY:
 
 SESSION #: _1__
 Date: 3/25/26
