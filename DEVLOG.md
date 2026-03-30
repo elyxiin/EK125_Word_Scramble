@@ -207,12 +207,12 @@ count = 0
 hasAnswer = False
 
 while count <= maxAttempts and hasAnswer == False:
-userInput = input(“Choose a word: “).lower()
+	userInput = input(“Choose a word: “).lower()
 
-for character in userInput and hasAnswer == False:
-	if character not in letter:
-		print("Invalid statement")
-		count += 1
+	for character in userInput and hasAnswer == False:
+		if character not in letter:
+			print("Invalid statement")
+			count += 1
 
     if userInput.lower() == key.lower(): 
 			print(“You Got It!”)
@@ -235,6 +235,7 @@ Syntax Error:
 SyntaxError: invalid syntax
 
 WHAT'S NEXT: I tried to fix it with I went in office hour to help to me
+Time spent on Monday: 2 hour and 30 minutes
 
 SESSION #: _3__
 WHAT I WORKED ON TODAY/ What I learned: 
@@ -282,6 +283,8 @@ def playGame(word, difficulty):
 
     return score
 ```
+Time spent Wednesday: 1 hour and 20 minutes
+Time spent total: 3 hour and 50 minutes
 
 ## Kiera
 Student Name: Kiera Rampersad
