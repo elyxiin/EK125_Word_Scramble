@@ -239,7 +239,7 @@ Time spent on Monday: 2 hour and 30 minutes
 
 SESSION #: _3__
 WHAT I WORKED ON TODAY/ What I learned: 
-During the lab I asked for help on how to redo my loops because my code was in a vicious cycle and the professor helped and I finished all my code in the lab on Wednesday. I stayed a little long then the lab usually gets out to ensure I get it checked by the professor and I finished all my code. I learned instead of putting all my loops into one big loop, to split them up into because in my original code I had a for loop and all my if statements inside it and I only needed one. I also made a function named playGame and put it in its own file then assigned that to a variable in the main file where it is called. 
+During the lab I asked for help on how to redo my loops because my code was in a vicious cycle and the professor helped and I finished all my code in the lab on Wednesday. I stayed a little long then the lab usually gets out to ensure I get it checked by the professor and I finished all my code. I learned instead of putting all my loops into one big loop, to split them up into because in my original code I had a for loop and all my if statements inside it and I only needed one. For example when I was iterating through each of the character I learned I had to instead of just making a for with a boolean vwlue which I learned you cannot do I have to make a for loop and a if statement. Then also assign a variable outside as False then the boolean value change if the user input agrees with the if statement. I never thought of using a if statement with boolean value but I learned it is very useful especially in games like a word scramble. I also made a function named playGame and put it in its own file then assigned that to a variable in the main file where it is called. 
 
 Code After: 
 ```
@@ -261,7 +261,7 @@ def playGame(word, difficulty):
         for character in userInput:
             if character not in letters:
                 hasDigit = True
-                      elif hasDigit:
+		elif hasDigit:
             count += 1
             print("Invalid statement")
 
