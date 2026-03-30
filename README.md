@@ -21,7 +21,9 @@
 - Made a word scrambler function
 
 **Riya's Contributions:**
-
+- Made the function playGame and created a dictionary of if it dictionary and set it equal to the corresponding number
+- Create the while loop where it only run if the atempts the user has made is less or equal to three and hasAnswer is False
+- Printed the final score and the attempt it took the user and if they didnt get the word it would print the word
 
 **Kiera's Contributions:**
 - Made a def select hint system for riya to incorperate into her while loop. 
