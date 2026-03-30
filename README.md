@@ -32,3 +32,5 @@
 - Set max hints to 2 because there are only two hints, and took away from the score when hiints were used
 
 Future enhancement ideas:
+- We could have a multi player mode where you can compete against different people to see who can take the shortest amount of attempts to get the word or see you can get the fastest timing (or even both)
+- Add a timer for each guess and not the whole time it took to get the word
