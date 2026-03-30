@@ -23,6 +23,7 @@
 **Riya's Contributions:**
 - Made the function playGame and created a dictionary of if it dictionary and set it equal to the corresponding number
 - Create the while loop where it only run if the atempts the user has made is less or equal to three and hasAnswer is False
+- Create a for loop that goes through each character of the word to see if there is a number or command that should not be in the guess
 - Printed the final score and the attempt it took the user and if they didnt get the word it would print the word
 
 **Kiera's Contributions:**
